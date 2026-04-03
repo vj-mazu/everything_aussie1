@@ -1,8 +1,11 @@
 {
 	"name": "monorepo-root",
 	"private": true,
+	"workspaces": [
+		"apps/web"
+	],
 	"scripts": {
-		"build": "npm run build --prefix apps/web",
-		"start": "npm run start --prefix apps/web"
+		"build": "npm run build --workspace=web",
+		"start": "npm run start --workspace=web"
 	}
 }
