@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "public": true,
+  "buildCommand": "npm run build --workspace=web",
+  "outputDirectory": "apps/web/build/client",
+  "framework": "remix",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/"
     }
-  ],
-  "framework": "remix"
+  ]
 }
