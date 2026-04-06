@@ -62,10 +62,15 @@ export default defineConfig({
     loadFontsFromTailwindSource(),
     addRenderIds(),
     reactRouter(),
-    tsconfigPaths(),
+    tsconfigPaths({
+      projects: [path.resolve(__dirname, 'tsconfig.json')],
+    }),
     aliases(),
     layoutWrapperPlugin(),
   ],
+  build: {
+    target: 'esnext',
+  },
   resolve: {
     alias: {
       lodash: 'lodash-es',
