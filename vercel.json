@@ -2,7 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build --workspace=web",
   "outputDirectory": "apps/web/build/client",
-  "framework": "remix",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
