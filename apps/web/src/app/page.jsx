@@ -262,14 +262,12 @@ export default function HomePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 style={{ transform }}
-                href="#location"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("location")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="bg-black/30 backdrop-blur-xl text-white px-10 py-5 rounded-full text-lg font-bold border-2 border-white/40 hover:bg-[#C9A668]/20 transition-all duration-300 hover:border-[#C9A668]"
+                href="https://www.google.com/maps/place/Everything+Aussie+(Australian+Souvenir),+Shop+185%2FAile+D+322%2F326+Coventry+St,+South+Melbourne+VIC+3205,+Australia/@-37.831778,144.9537363,17z/data=!4m2!3m1!1s0x6ad667fec88703a5:0x73e018d19b7aa44f!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black/30 backdrop-blur-xl text-white px-10 py-5 rounded-full text-lg font-bold border-2 border-white/40 hover:bg-[#C9A668]/20 transition-all duration-300 hover:border-[#C9A668] flex items-center gap-3"
               >
-                Visit Our Stall
+                Visit Our Stall <MapPin className="w-5 h-5 text-[#C9A668]" />
               </motion.a>
             </motion.div>
           </div>
@@ -750,16 +748,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-[600px]">
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-[600px] border border-[#C9A668]/20">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.543286077747!2d144.95373631531656!3d-37.83177797975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad667f1c1e2c1c1%3A0x1234567890abcdef!2s322%20Coventry%20St%2C%20South%20Melbourne%20VIC%203205!5e0!3m2!1sen!2sau!4v1234567890123!5m2!1sen!2sau"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.488344558548!2d144.95383567672236!3d-37.83220797197171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad667fec88703a5%3A0x73e018d19b7aa44f!2sEverything%20Aussie%20(Australian%20Souvenir)!5e0!3m2!1sen!2sau!4v1712478492000!5m2!1sen!2sau"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale hover:grayscale-0 transition-all duration-700"
+                className="hover:grayscale-0 transition-all duration-700"
               ></iframe>
             </div>
           </div>
