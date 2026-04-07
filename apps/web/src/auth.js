@@ -249,10 +249,16 @@ function Adapter(client) {
     },
   };
 }
-const pool = new Pool({
+let _adapter = null;
+function getAdapter() {
+  if (!_adapter) {
+    const pool = new Pool({
       connectionString: process.env.DATABASE_URL,
     });
-const adapter = Adapter(pool);
+    _adapter = Adapter(pool);
+  }
+  return _adapter;
+}
 
 export const { auth } = CreateAuth({
   providers: [Credentials({
@@ -278,7 +284,7 @@ export const { auth } = CreateAuth({
     }
 
     // logic to verify if user exists
-    const user = await adapter.getUserByEmail(email);
+    const user = await getAdapter().getUserByEmail(email);
     if (!user) {
       return null;
     }
@@ -324,9 +330,9 @@ export const { auth } = CreateAuth({
     }
 
     // logic to verify if user exists
-    const user = await adapter.getUserByEmail(email);
+    const user = await getAdapter().getUserByEmail(email);
     if (!user) {
-      const newUser = await adapter.createUser({
+      const newUser = await getAdapter().createUser({
         emailVerified: null,
         email,
         name:
@@ -339,7 +345,7 @@ export const { auth } = CreateAuth({
             ? credentials.image
             : undefined,
       });
-      await adapter.linkAccount({
+      await getAdapter().linkAccount({
         extraData: {
           password: await hash(password),
         },

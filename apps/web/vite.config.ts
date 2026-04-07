@@ -64,6 +64,7 @@ export default defineConfig({
     reactRouter(),
     tsconfigPaths({
       projects: [path.resolve(__dirname, 'tsconfig.json')],
+      ignoreConfigErrors: true,
     }),
     aliases(),
     layoutWrapperPlugin(),
@@ -81,6 +82,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
     dedupe: ['react', 'react-dom'],
+  },
+  esbuild: {
+    supported: {
+      'top-level-await': true
+    }
   },
   clearScreen: false,
   server: {
