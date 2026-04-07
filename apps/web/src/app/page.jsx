@@ -245,6 +245,10 @@ export default function HomePage() {
                 whileTap={{ scale: 0.95 }}
                 style={{ transform }}
                 href="#products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="bg-gradient-to-r from-[#C9A668] to-[#8B6F47] text-white px-10 py-5 rounded-full text-lg font-bold shadow-[0_20px_50px_rgba(201,166,104,0.4)] transition-all duration-300 relative group overflow-hidden border border-white/20"
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -259,6 +263,10 @@ export default function HomePage() {
                 whileTap={{ scale: 0.95 }}
                 style={{ transform }}
                 href="#location"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("location")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="bg-black/30 backdrop-blur-xl text-white px-10 py-5 rounded-full text-lg font-bold border-2 border-white/40 hover:bg-[#C9A668]/20 transition-all duration-300 hover:border-[#C9A668]"
               >
                 Visit Our Stall
@@ -410,17 +418,19 @@ export default function HomePage() {
                 key={index}
                 initial={{ 
                   opacity: 0, 
-                  x: index % 2 === 0 ? -100 : 100, 
+                  x: index % 2 === 0 ? -40 : 40,
+                  scale: 0.98,
                 }}
                 whileInView={{ 
                   opacity: 1, 
                   x: 0, 
+                  scale: 1,
                 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ 
                   type: "spring", 
-                  stiffness: 70, 
-                  damping: 18, 
+                  stiffness: 45, 
+                  damping: 15, 
                   delay: index * 0.1 
                 }}
                 className={`group flex flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl ${
@@ -630,18 +640,25 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold mb-2 font-playfair-display">
                       Address
                     </h3>
-                    <p className="text-white/80 font-light leading-relaxed">
-                      Shop 185 Everything Aussie
-                      <br />
-                      322-326 Coventry St
-                      <br />
-                      South Melbourne VIC 3205
-                      <br />
-                      Australia
-                    </p>
-                    <p className="text-[#C9A668] text-sm mt-2">
-                      Located in: South Melbourne Market
-                    </p>
+                    <a 
+                      href="https://www.google.com/maps/place/Everything+Aussie+(Australian+Souvenir),+Shop+185%2FAile+D+322%2F326+Coventry+St,+South+Melbourne+VIC+3205,+Australia/@-37.831778,144.9537363,17z/data=!4m2!3m1!1s0x6ad667fec88703a5:0x73e018d19b7aa44f!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group cursor-pointer block"
+                    >
+                      <p className="text-white/80 font-light leading-relaxed group-hover:text-[#C9A668] transition-colors">
+                        Shop 185 Everything Aussie
+                        <br />
+                        322-326 Coventry St
+                        <br />
+                        South Melbourne VIC 3205
+                        <br />
+                        Australia
+                      </p>
+                      <p className="text-[#C9A668] text-sm mt-3 flex items-center gap-2 group-hover:underline">
+                        View on Google Maps <MapPin className="w-3.5 h-3.5" />
+                      </p>
+                    </a>
                   </div>
                 </div>
 
