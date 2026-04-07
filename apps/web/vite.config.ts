@@ -13,7 +13,7 @@ import { nextPublicProcessEnv } from './plugins/nextPublicProcessEnv';
 import { restart } from './plugins/restart';
 import { restartEnvFileChange } from './plugins/restartEnvFileChange';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   // Keep them available via import.meta.env.NEXT_PUBLIC_*
   envPrefix: 'NEXT_PUBLIC_',
   optimizeDeps: {
@@ -34,8 +34,8 @@ export default defineConfig({
   logLevel: 'info',
   plugins: [
     nextPublicProcessEnv(),
-    restartEnvFileChange(),
-    reactRouterHonoServer({
+    command === 'serve' && restartEnvFileChange(),
+    command === 'serve' && reactRouterHonoServer({
       serverEntryPoint: './__create/index.ts',
       runtime: 'node',
     }),
@@ -48,7 +48,7 @@ export default defineConfig({
         plugins: ['styled-jsx/babel'],
       },
     }),
-    restart({
+    command === 'serve' && restart({
       restart: [
         'src/**/page.jsx',
         'src/**/page.tsx',
@@ -58,7 +58,7 @@ export default defineConfig({
         'src/**/route.ts',
       ],
     }),
-    consoleToParent(),
+    command === 'serve' && consoleToParent(),
     loadFontsFromTailwindSource(),
     addRenderIds(),
     reactRouter(),
@@ -68,7 +68,7 @@ export default defineConfig({
     }),
     aliases(),
     layoutWrapperPlugin(),
-  ],
+  ].filter(Boolean),
   build: {
     target: 'esnext',
   },
@@ -100,4 +100,4 @@ export default defineConfig({
       clientFiles: ['./src/app/**/*', './src/app/root.tsx', './src/app/routes.ts'],
     },
   },
-});
+}));

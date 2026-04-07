@@ -1,0 +1,9 @@
+
+> build
+> npm run build --workspace=web
+
+
+> build
+> react-router build
+
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 

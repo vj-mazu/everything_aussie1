@@ -1,0 +1,50 @@
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 46 modules transformed.
+[31m✗[39m Build failed in 1.01s
+[31m[react-router:route-exports] SPA Mode: 1 invalid route export(s) in `./__create/not-found.tsx`: `loader`. See https://reactrouter.com/how-to/spa for more information.[39m
+file: [36mC:/Users/maju/Downloads/anything/anything/apps/web/src/app/__create/not-found.tsx[39m
+    at Object.transform (C:\Users\maju\Downloads\anything\anything\apps\web\node_modules\@react-router\dev\dist\vite.js:4288:19)
+    at Object.handler (file:///C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46537:15)
+    at file:///C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/rollup/dist/es/shared/node-entry.js:22967:40
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'PLUGIN_ERROR',
+  plugin: 'react-router:route-exports',
+  hook: 'transform',
+  id: 'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/__create/not-found.tsx',
+  watchFiles: [
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/onboarding/page.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/account/signin/page.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/root.tsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/page.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/__create/social-dev-shim/page.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/__create/not-found.tsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/account/signup/page.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-dom/client.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-router/dist/development/dom-export.mjs',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react/jsx-runtime.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react/index.js',
+    'C:\\Users\\maju\\Downloads\\anything\\anything\\apps\\web\\package.json',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-dom/index.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react/cjs/react.production.min.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react/cjs/react-jsx-runtime.production.min.js',
+    'C:\\Users\\maju\\Downloads\\anything\\anything\\apps\\web\\src\\app\\layout.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-router/dist/development/chunk-2UH5WJXA.mjs',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-router/dist/development/chunk-QFMPRPBF.mjs',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-dom/cjs/react-dom.production.min.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-router/dist/development/index.mjs',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/app/layout.jsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/scheduler/index.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/react-router/node_modules/cookie/dist/index.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/set-cookie-parser/lib/set-cookie.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/scheduler/cjs/scheduler.production.min.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/@tanstack/react-query/build/modern/index.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/utils/useAuth.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/__create/PolymorphicComponent.tsx',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/src/utils/useUser.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/framer-motion/dist/es/index.mjs',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/styled-jsx/style.js',
+    'C:/Users/maju/Downloads/anything/anything/apps/web/node_modules/lucide-react/dist/esm/lucide-react.js'
+  ]
+}
